@@ -6,7 +6,7 @@
 	#   Date modified: 10/10/2024  
 
 	include_once( 'Db.php' );
-	//include_once( 'File.php' );
+	include_once( 'File.php' );
 
 	class Player
 	{
@@ -15,7 +15,7 @@
       		Db::__construct as private __appConst;
     	}
 
-		//use File;
+		use File;
 
 		protected $table = '';
 		private static $nigerian_states = [
@@ -124,7 +124,7 @@
 		
 		function updatePlayer( array $dt ) 
 		{
-			$sql = "UPDATE $this->table SET `full_name`= ?, `email`= ?, `dob`= ?, `height`= ?, `weight`= ?, `position`= ?, `j_num`= ?, `state`= ?, `season_stats` = ?, `status` = ?, `img` = ?  WHERE id = ?";
+			$sql = "UPDATE $this->table SET `full_name`= ?, `email`= ?, `dob`= ?, `height`= ?, `weight`= ?, `position`= ?, `j_num`= ?, `state`= ?, `season_stats` = ?, `status` = ? WHERE id = ?";
 
 			$res = $this->runQuery($sql, $dt);
 			return $res ?? false;

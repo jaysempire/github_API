@@ -1,6 +1,6 @@
 <?php
-    include_once( 'models/Player.php' );
 	include_once( 'inc/check_auth.php' );
+	include_once( 'models/Player.php' );
 
     $player = new Player();
 

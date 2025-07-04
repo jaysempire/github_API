@@ -7,6 +7,7 @@
 
     try {
         $id = $json_data->id ?? '';
+        
         if(!$player->getById([$id])){
             throw new Exception( 'Player doesn\'t Exist!' );
         }
